@@ -44,7 +44,7 @@ public class ListFragment extends Fragment implements ListView {
         mLayoutManager = new LinearLayoutManager(this.getContext(), LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mListBookPresenter = new SearchLibrosImpl(this);
+        mListBookPresenter = new SearchLibrosImpl(this, ListFragment.this.getActivity());
         mListBookPresenter.getTask().execute();
 
         return mainView;
